@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Link Share</title>
+	<link rel="canonical" href="https://www.kodymirus.cz/link-share/" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Icons and Colors -->
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+	<link rel="manifest" href="./manifest.json">
+	<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#000000">
+	<link rel="shortcut icon" href="./favicon.ico">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="msapplication-TileImage" content="./mstile-144x144.png">
+	<meta name="msapplication-config" content="./browserconfig.xml">
+	<meta name="theme-color" content="#000000">
+	
+	<!-- SEO and Social Sharing and SEO -->
+	<meta name="description" content="Share my links on Android" />
+	<meta name="robots" content="noodp" />
+	<meta name="author" content="Michal Hoftich">
+	<meta name="keywords" content="Share my links on Android" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Link Share" />
+	<meta property="og:description" content="Share my links on Android" />
+	<meta property="og:url" content="https://simplepwa.com" />
+	<meta property="og:site_name" content="Link Share" />
+	<meta property="section:publisher" content="https://www.facebook.com/simplepwa/" />
+	<meta property="og:image" content="https://simplepwa.com/share.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Link Share" />
+	<meta name="twitter:description" content="Share my links on Android" />
+	<meta name="twitter:site" content="@simplepwa" />
+	<meta name="twitter:image" content="https://simplepwa.com/share.jpg" />
+	<meta name="twitter:creator" content="@michal.h21" />
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Javscript -->
+	<script>
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", () => {
+				navigator.serviceWorker && navigator.serviceWorker.register("./sw.js");
+			});
+		}
+	</script>
+	<script defer src="./main.js"></script>
+ </head>
+
+ <body>
+
+	<header>
+		<div class="container">
+			<a href="./" class="logo" aria-label="Logo">
+				<img src="logo.svg" alt="Logo">
+			</a>
+			<h1>Link Share</h1>
+		</div>
+	</header>
+
+	<section>
+      <div id="shared-data">
+      </div>
+  </section>
+ </body>
+ <script>
+    var parsedUrl = new URL(window.location.toString());
+    var name = parsedUrl.searchParams.get('title') || "neznámý";
+    var text = parsedUrl.searchParams.get('text') || "ahoj";
+    var link = parsedUrl.searchParams.get('url') || "neni";
+    console.log('Title shared: ' + name);
+    console.log('Text shared: ' + text);
+    console.log('URL shared: ' + link);
+    var template = `Nazdar ${name}, text je ${text} a odkaz ${link}`;
+    var data = document.querySelector("#shared-data");
+    data.innerHTML = template;
+ </script>
+ </html>
