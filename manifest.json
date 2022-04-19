@@ -2,7 +2,7 @@
 	"name": "Link share",
 	"short_name": "Link share",
 	"display": "standalone",
-	"start_url": "./",
+	"start_url": "/link-share/",
 	"scope": ".",
 	"theme_color": "#000",
 	"background_color": "#000",

@@ -1,4 +1,4 @@
-const cacheName = "cache-2022-04-18-1"; // Change value to force update
+const cacheName = "cache-2022-04-19"; // Change value to force update
 
 self.addEventListener("install", event => {
 	// Kick out the old service worker
@@ -7,7 +7,7 @@ self.addEventListener("install", event => {
 	event.waitUntil(
 		caches.open(cacheName).then(cache => {
 			return cache.addAll([
-				"/",
+				"./",
 				"favicon-32x32.png", // Favicon, Android Chrome M39+ with 0.75 screen density
 				"android-chrome-96x96.png", // Favicon, Android Chrome M39+ with 2.0 screen density
 				"android-chrome-144x144.png", // Favicon, Android Chrome M39+ with 3.0 screen density
@@ -18,8 +18,8 @@ self.addEventListener("install", event => {
 				"browserconfig.xml", // IE11 icon configuration file
 				"favicon.ico", // Favicon, IE and fallback for other browsers
 				"favicon-16x16.png", // Favicon, default
-				"favicon-32x32.png", // Favicon, Safari on Mac OS
 				"index.html", // Main HTML file
+        "share.html",
 				"logo.svg", // Logo
 				"main.js", // Main Javascript file
 				"manifest.json", // Manifest file
