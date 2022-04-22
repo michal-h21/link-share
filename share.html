@@ -83,11 +83,11 @@
     data.innerHTML = template;
     console.log("Hello world");
     var encoded_text = encodeURIComponent(text)
-    var form = `https://docs.google.com/forms/d/e/1FAIpQLSc1BZWCFcOuvnPPHlHpf78ny92sXpyuSCcq7mNRveKLYAz3-A/viewform?usp=pp_url&entry.1591117356=${encoded_text}&submit=Submit`;
-    console.log("Trying to send data");
+    //var form = "https://knihovna.pedf.cuni.cz/"
+    var form = `https://docs.google.com/forms/d/e/1FAIpQLSc1BZWCFcOuvnPPHlHpf78ny92sXpyuSCcq7mNRveKLYAz3-A/formResponse?usp=pp_url&entry.1591117356=${encoded_text}&submit=Submit`;
+    //console.log("Trying to send data");
     console.log(form)
-   fetch(form,{"method": 'GET', "mode": 'no-cors', "headers": { 'Content-Type': 'application/x-www-form-urlencoded', }}).then(response => response.json())
-     .then(data => console.log(data));
+    fetch(form,{"method": 'GET', "mode": 'no-cors', "headers": { 'Content-Type': 'application/x-www-form-urlencoded', }}).then(data => console.log(data));
 
     // const XHR = new XMLHttpRequest();
     // XHR.open( 'GET', form);
