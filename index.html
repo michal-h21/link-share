@@ -51,6 +51,8 @@
 			});
 		}
 	</script>
+<style type="text/css">
+</style>
 	<script defer src="./main.js"></script>
  </head>
 
@@ -68,37 +70,16 @@
 	<section>
 		<div class="container">
 			<h2 id="what">What is this?</h2>
-			<p><a href="https://github.com/nikkifurls/simple-pwa" target="_blank" rel="noopener">Simple PWA</a> is a Progressive Web App template that provides the minimum file structure needed to create a PWA&#x2014;a <a href="https://web.dev/what-are-pwas/#reliable" target="_blank" rel="noopener">reliable</a> and <a href="https://web.dev/what-are-pwas/#installable" target="_blank" rel="noopener">installable</a> web application. It's up to you to build upon it, to make it <a href="https://web.dev/what-are-pwas/#capable" target="_blank" rel="noopener">capable</a>.
-			<p>Simple PWA is "offline-first", using a <a href="https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker#cache_then_network" target="_blank" rel="noopener">"cache first"</a> caching strategy, which means on load, two asynchronous requests are kicked off&#x2014;one to the cache, and one to the network. If there's a cached version available, it is used, but the updated version is fetched and stored for the next load. To force the cache to update from the network, change the value of <a href="https://github.com/nikkifurls/simple-pwa/blob/master/sw.js#L1" target="_blank" rel="nofollow noopener"><code>cacheName</code></a> in <a href="https://github.com/nikkifurls/simple-pwa/blob/master/sw.js" target="_blank" rel="nofollow noopener"><code>sw.js</code></a>.</p>
-			<h2 class="how">How do I use it?</h2>
-			<ol>
-				<li>Clone the repository from <a href="https://github.com/nikkifurls/simple-pwa" target="_blank" rel="noopener">GitHub</a>.</li>
-				<li>Create all favicon images using <a href="https://realfavicongenerator.net" target="_blank" rel="noopener">RealFaviconGenerator</a> and replace existing images with generated images.
-					<p>If you're able to install the CLI version of <strong>RealFaviconGenerator</strong>, <a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon_config.json" target="_blank" rel="nofollow noopener"><code>favicon_config.json</code></a> contains all settings to generate these images using the following command from the project's root directory. The <code>real-favicon</code> tool generates images from <a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon.png" target="_blank" rel="nofollow noopener"><code>favicon.png</code></a>, so replace <a href="https://github.com/nikkifurls/simple-pwa/blob/master/favicon.png" target="_blank" rel="nofollow noopener"><code>favicon.png</code></a> prior to running this command. The resulting <code>favicon_data.json</code> and <code>site.webmanifest</code> can be discarded.</p>
-					<p><code>real-favicon generate favicon_config.json favicon_data.json .</code></p>
-				</li>
-				<li>Create new 650x650 maskable icon using <a href="https://maskable.app" target="_blank" rel="noopener">Maskable.app</a> and replace <a href="https://github.com/nikkifurls/simple-pwa/blob/master/maskable_icon.png" target="_blank" rel="nofollow noopener"><code>maskable_icon.png</code></a>.</li>
-				<li>Create new black vector icon using <a href="http://manytools.org/image/colorize-filter" target="_blank" rel="noopener">Manytools' colorize images tool</a> and replace <a href="https://github.com/nikkifurls/simple-pwa/blob/master/safari-pinned-tab.svg" target="_blank" rel="nofollow noopener"><code>safari-pinned-tab.svg</code></a>.</li>
-				<li>Create new 1200x630 share image and replace <a href="https://github.com/nikkifurls/simple-pwa/blob/master/share.jpg" target="_blank" rel="nofollow noopener"><code>share.jpg</code></a>.</li>
-				<li>Build upon the PWA by adding HTML, CSS, and Javascript.</li>
-			</ol>
-			<h2 class="more">Where can I find other PWAs?</h2>
-			<p>Looking for inspiration? Check out these PWA directories:</p>
-			<ul>
-				<li><a href="https://pwainside.com/" target="_blank" rel="noopener nofollow">PWA Inside</a></li>
-				<li><a href="https://appsco.pe/" target="_blank" rel="noopener nofollow">Appscope</a></li>
-				<li><a href="https://progressiveapp.store/" target="_blank" rel="noopener nofollow">Progressive App Store</a></li>
-				<li><a href="https://pwa-directory.appspot.com/" target="_blank" rel="noopener nofollow">PWA Directory</a></li>
-			</ul>
-			<h2 class="help">Can I contribute?</h2>
-			<p>Want to help improve this? Contributions are welcome! <span class="icon arrow" role="img" aria-label="Arrow">&#x27A1;&#xFE0F;</span>&nbsp;<a href="https://github.com/nikkifurls/simple-pwa" target="_blank" rel="nofollow noopener">GitHub</a></p>
-		</div>
-	</section>
-
-	<footer>
-		<div class="container">
-			<p>If you find this useful, please share it, and if you can, support me directly on <a href="https://patreon.com/nicolefurlan" target="_blank" rel="noopener nofollow">Patreon</a> or <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FACW2AMWGLZ6S&source=url" target="_blank" rel="noopener nofollow">Paypal</a>. Your support is greatly appreciated!&nbsp;<span class="icon heart" role="img" aria-label="Heart">&#x2764;</span></p>
-		</div>
+      <p>This app shares links to Google Forms on Android devices</p>
+      <div id="configure"> 
+        It seems that the Google Forms address is missing. Configure it here:
+        <a href="configure.html">
+          <button>
+            Configure
+          </button>
+      </div>
+  </section>
+  </footer>
 	</footer>
 
  </body>

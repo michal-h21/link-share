@@ -64,40 +64,29 @@
 			<h1>Link Share</h1>
 		</div>
 	</header>
-
-	<section>
-      <div id="shared-data">
-      </div>
-      <div id="configure"> 
-        It seems that the Google Forms address is missing. Configure it here:
-        <a href="configure.html">
-          <button>
-            Configure
-          </button>
-      </div>
+  <section>
+    <form id="config-form">
+      <label>Copy Google Forms link here: <input id="googleurl" name="googleurl" /></label>
+      <input type="submit" />
+    </form>
   </section>
- </body>
- <script>
-    var interpolate = (tpl, args) => tpl.replace(/\${(\w+)}/g, (_, v) => args[v]);
-    var parsedUrl = new URL(window.location.toString());
-    var name = parsedUrl.searchParams.get('title') || "neznámý";
-    var text = parsedUrl.searchParams.get('text') || "ahoj";
-    var link = parsedUrl.searchParams.get('url') || "neni";
-    console.log('Title shared: ' + name);
-    console.log('Text shared: ' + text);
-    console.log('URL shared: ' + link);
-    var template = `Nazdar ${name}, text je ${text} a odkaz ${link}`;
-    var data = document.querySelector("#shared-data");
-    data.innerHTML = template;
-    console.log("Hello world");
-    var encoded_text = encodeURIComponent(text)
-    let templatevar = localStorage.getItem('template');
-    if (templatevar != null){
-      let form = interpolate(templatevar, {encoded_text: encoded_text});
-      //console.log("Trying to send data");
-      console.log(form)
-      fetch(form,{"method": 'GET', "mode": 'no-cors', "headers": { 'Content-Type': 'application/x-www-form-urlencoded', }}).then(data => console.log(data));
+  <script>
+  var form = document.querySelector("#config-form");
+  form.addEventListener("submit", function(event) {
+    let url = form.elements.googleurl.value
+    console.log("Saving value", url);
+    if(url && url.match("^http")){
+      console.log("Valid url");
+      // we need to change shared prefilled form url with a new url
+      let newurl = url.replace("viewform","formResponse").replace(/=[^=]+$/, "=${encoded_text}&submit=Submit"); 
+      console.log("Saving URL: " + newurl)
+      localStorage.setItem('template', newurl);
     }
+    event.preventDefault();
+  });
+  </script>
+ </body>
+</html>
 
- </script>
- </html>
+
+

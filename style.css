@@ -84,3 +84,5 @@ code {
 code.image {
 	background-color: lightyellow;
 }
+
+#configured{display:none;color:red;font-size:1.3rem;font-weight:bold;}

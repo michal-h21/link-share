@@ -1,4 +1,4 @@
-const cacheName = "cache-2022-04-19"; // Change value to force update
+const cacheName = "cache-2022-04-26-4"; // Change value to force update
 
 self.addEventListener("install", event => {
 	// Kick out the old service worker
@@ -20,6 +20,7 @@ self.addEventListener("install", event => {
 				"favicon-16x16.png", // Favicon, default
 				"index.html", // Main HTML file
         "share.html",
+        "configure.html",
 				"logo.svg", // Logo
 				"main.js", // Main Javascript file
 				"manifest.json", // Manifest file
